@@ -1,2 +1,31 @@
-<h1>Stack Overflow Clone</h1>
-<p>Use api to get info</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/public/stylesheet/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/public/stylesheet/application.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/public/js/application.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+  </head>
+
+  <body>
+    <h1>DBC Overflow Clone</h1>
+    <div class="quote"></div>
+    <div class="questions-list"></div>
+
+    <script id="questions_list_template" type="text/x-handlebars-template">
+      {{#each questions}}
+      <div class="question" id="{{question.id}}">
+        <p>{{question.votes}}</p>
+        <button class="Upvote">Upvote</button>
+        <button class="downvote">Downvote</button>
+        <div class="question_title"><p>{{this.title}}</p></div>
+        <button class="edit">Edit</button>
+        <button class="delete-btn">Destroy</button>
+      </div>
+      {{/each}}
+    </script>
+  </body>
+</html>
+
